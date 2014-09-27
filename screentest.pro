@@ -16,7 +16,8 @@ HEADERS += \
 OTHER_FILES += \
     qml/main.qml \
     android/AndroidManifest.xml \
-    android/src/com/iktwo/screentest/ScreenTest.java
+    android/src/com/iktwo/screentest/ScreenTest.java \
+    qml/ComponentsData.qml
 
 RESOURCES += resources.qrc
 

@@ -1,8 +1,9 @@
 <RCC>
     <qresource prefix="/qml">
         <file>qml/main.qml</file>
+        <file>qml/ComponentsData.qml</file>
     </qresource>
-	<qresource prefix="/images">
+    <qresource prefix="/images">
         <file alias="icon">resources/images/icon.svg</file>
     </qresource>
     <qresource prefix="/images/ldpi">
@@ -24,4 +25,3 @@
         <file alias="icon">android/res/drawable-xxxhdpi/icon.png</file>
     </qresource>
 </RCC>
-

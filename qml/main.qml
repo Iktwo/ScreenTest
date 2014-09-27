@@ -1,7 +1,7 @@
 import QtQuick 2.3
 import QtQuick.Controls 1.2
-import com.iktwo.components 1.0
 import QtQuick.Window 2.2
+import com.iktwo.components 1.0
 
 ApplicationWindow {
     property var resolutions: [
@@ -43,7 +43,7 @@ ApplicationWindow {
         Flickable {
             anchors {
                 fill: parent
-                margins: 8 * ScreenValues.dp
+                margins: 8
             }
 
             contentHeight: column.height
@@ -53,114 +53,106 @@ ApplicationWindow {
 
                 width: parent.width
 
-                spacing: 10 * ScreenValues.dp
+                spacing: 10
 
                 Label {
                     text: "Screen info"
                     width: parent.width
                     elide: "ElideRight"
                     horizontalAlignment: "AlignHCenter"
-                    font.pixelSize: 22 * ScreenValues.dp
                 }
 
                 Label {
                     text: "desktopAvailableHeight: " + Screen.desktopAvailableHeight
                     width: parent.width
                     elide: "ElideRight"
-                    font.pixelSize: 18 * ScreenValues.dp
                 }
 
                 Label {
                     text: "desktopAvailableWidth: " + Screen.desktopAvailableWidth
                     width: parent.width
                     elide: "ElideRight"
-                    font.pixelSize: 18 * ScreenValues.dp
                 }
 
                 Label {
                     text: "height: " + Screen.height
                     width: parent.width
                     elide: "ElideRight"
-                    font.pixelSize: 18 * ScreenValues.dp
                 }
 
                 Label {
                     text: "width: " + Screen.width
                     width: parent.width
                     elide: "ElideRight"
-                    font.pixelSize: 18 * ScreenValues.dp
+
                 }
 
                 Label {
                     text: "name: " + Screen.name
                     width: parent.width
                     elide: "ElideRight"
-                    font.pixelSize: 18 * ScreenValues.dp
                 }
 
                 Label {
                     text: "orientation: " + orientationToScreen(Screen.orientation)
                     width: parent.width
                     elide: "ElideRight"
-                    font.pixelSize: 18 * ScreenValues.dp
                 }
 
                 Label {
                     text: "primaryOrientation: " + orientationToScreen(Screen.primaryOrientation)
                     width: parent.width
                     elide: "ElideRight"
-                    font.pixelSize: 18 * ScreenValues.dp
                 }
 
                 Label {
                     text: "pixelDensity: " + Screen.pixelDensity
                     width: parent.width
                     elide: "ElideRight"
-                    font.pixelSize: 18 * ScreenValues.dp
                 }
 
                 Label {
                     text: "logicalPixelDensity: " + Screen.logicalPixelDensity
                     width: parent.width
                     elide: "ElideRight"
-                    font.pixelSize: 18 * ScreenValues.dp
                 }
 
                 Label {
                     text: "physicalDotsPerInch: " + physicalDotsPerInch
                     width: parent.width
                     elide: "ElideRight"
-                    font.pixelSize: 18 * ScreenValues.dp
                 }
 
                 Label {
                     text: "physicalDotsPerInchX: " + physicalDotsPerInchX
                     width: parent.width
                     elide: "ElideRight"
-                    font.pixelSize: 18 * ScreenValues.dp
                 }
 
                 Label {
                     text: "physicalDotsPerInchY: " + physicalDotsPerInchY
                     width: parent.width
                     elide: "ElideRight"
-                    font.pixelSize: 18 * ScreenValues.dp
                 }
 
                 Label {
-                    text: "dp: " + ScreenValues.dp
+                    text: "dp: " + (loader.status === Loader.Ready ? loader.item.dp : "Unknown")
                     width: parent.width
                     elide: "ElideRight"
-                    font.pixelSize: 18 * ScreenValues.dp
                 }
 
                 Label {
-                    text: "dpi: " + ScreenValues.dpi
+                    text: "dpi: " + (loader.status === Loader.Ready ? loader.item.dpi : "Unknown")
                     width: parent.width
                     elide: "ElideRight"
-                    font.pixelSize: 18 * ScreenValues.dp
                 }
             }
         }
+    }
+
+    Loader {
+        id: loader
+
+        source: "ComponentsData.qml"
     }
 }
