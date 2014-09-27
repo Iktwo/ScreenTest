@@ -37,119 +37,130 @@ ApplicationWindow {
     height: resolutions[currentResolution]["height"]
     title: "ScreenTest"
 
-    Column {
-        anchors {
-            fill: parent
-            margins: 8 * ScreenValues.dp
-        }
+    ScrollView {
+        anchors.fill: parent
 
-        spacing: 10 * ScreenValues.dp
+        Flickable {
+            anchors {
+                fill: parent
+                margins: 8 * ScreenValues.dp
+            }
 
-        Label {
-            text: "Screen info"
-            width: parent.width
-            elide: "ElideRight"
-            horizontalAlignment: "AlignHCenter"
-            font.pixelSize: 22 * ScreenValues.dp
-        }
+            contentHeight: column.height
 
-        Label {
-            text: "desktopAvailableHeight: " + Screen.desktopAvailableHeight
-            width: parent.width
-            elide: "ElideRight"
-            font.pixelSize: 18 * ScreenValues.dp
-        }
+            Column {
+                id: column
 
-        Label {
-            text: "desktopAvailableWidth: " + Screen.desktopAvailableWidth
-            width: parent.width
-            elide: "ElideRight"
-            font.pixelSize: 18 * ScreenValues.dp
-        }
+                width: parent.width
 
-        Label {
-            text: "height: " + Screen.height
-            width: parent.width
-            elide: "ElideRight"
-            font.pixelSize: 18 * ScreenValues.dp
-        }
+                spacing: 10 * ScreenValues.dp
 
-        Label {
-            text: "width: " + Screen.width
-            width: parent.width
-            elide: "ElideRight"
-            font.pixelSize: 18 * ScreenValues.dp
-        }
+                Label {
+                    text: "Screen info"
+                    width: parent.width
+                    elide: "ElideRight"
+                    horizontalAlignment: "AlignHCenter"
+                    font.pixelSize: 22 * ScreenValues.dp
+                }
 
-        Label {
-            text: "name: " + Screen.name
-            width: parent.width
-            elide: "ElideRight"
-            font.pixelSize: 18 * ScreenValues.dp
-        }
+                Label {
+                    text: "desktopAvailableHeight: " + Screen.desktopAvailableHeight
+                    width: parent.width
+                    elide: "ElideRight"
+                    font.pixelSize: 18 * ScreenValues.dp
+                }
 
-        Label {
-            text: "orientation: " + orientationToScreen(Screen.orientation)
-            width: parent.width
-            elide: "ElideRight"
-            font.pixelSize: 18 * ScreenValues.dp
-        }
+                Label {
+                    text: "desktopAvailableWidth: " + Screen.desktopAvailableWidth
+                    width: parent.width
+                    elide: "ElideRight"
+                    font.pixelSize: 18 * ScreenValues.dp
+                }
 
-        Label {
-            text: "primaryOrientation: " + orientationToScreen(Screen.primaryOrientation)
-            width: parent.width
-            elide: "ElideRight"
-            font.pixelSize: 18 * ScreenValues.dp
-        }
+                Label {
+                    text: "height: " + Screen.height
+                    width: parent.width
+                    elide: "ElideRight"
+                    font.pixelSize: 18 * ScreenValues.dp
+                }
 
-        Label {
-            text: "pixelDensity: " + Screen.pixelDensity
-            width: parent.width
-            elide: "ElideRight"
-            font.pixelSize: 18 * ScreenValues.dp
-        }
+                Label {
+                    text: "width: " + Screen.width
+                    width: parent.width
+                    elide: "ElideRight"
+                    font.pixelSize: 18 * ScreenValues.dp
+                }
 
-        Label {
-            text: "logicalPixelDensity: " + Screen.logicalPixelDensity
-            width: parent.width
-            elide: "ElideRight"
-            font.pixelSize: 18 * ScreenValues.dp
-        }
+                Label {
+                    text: "name: " + Screen.name
+                    width: parent.width
+                    elide: "ElideRight"
+                    font.pixelSize: 18 * ScreenValues.dp
+                }
 
-        Label {
-            text: "physicalDotsPerInch: " + physicalDotsPerInch
-            width: parent.width
-            elide: "ElideRight"
-            font.pixelSize: 18 * ScreenValues.dp
-        }
+                Label {
+                    text: "orientation: " + orientationToScreen(Screen.orientation)
+                    width: parent.width
+                    elide: "ElideRight"
+                    font.pixelSize: 18 * ScreenValues.dp
+                }
 
-        Label {
-            text: "physicalDotsPerInchX: " + physicalDotsPerInchX
-            width: parent.width
-            elide: "ElideRight"
-            font.pixelSize: 18 * ScreenValues.dp
-        }
+                Label {
+                    text: "primaryOrientation: " + orientationToScreen(Screen.primaryOrientation)
+                    width: parent.width
+                    elide: "ElideRight"
+                    font.pixelSize: 18 * ScreenValues.dp
+                }
 
-        Label {
-            text: "physicalDotsPerInchY: " + physicalDotsPerInchY
-            width: parent.width
-            elide: "ElideRight"
-            font.pixelSize: 18 * ScreenValues.dp
-        }
+                Label {
+                    text: "pixelDensity: " + Screen.pixelDensity
+                    width: parent.width
+                    elide: "ElideRight"
+                    font.pixelSize: 18 * ScreenValues.dp
+                }
 
-        Label {
-            text: "dp: " + ScreenValues.dp
-            width: parent.width
-            elide: "ElideRight"
-            font.pixelSize: 18 * ScreenValues.dp
-        }
+                Label {
+                    text: "logicalPixelDensity: " + Screen.logicalPixelDensity
+                    width: parent.width
+                    elide: "ElideRight"
+                    font.pixelSize: 18 * ScreenValues.dp
+                }
 
-        Label {
-            text: "dpi: " + ScreenValues.dpi
-            width: parent.width
-            elide: "ElideRight"
-            font.pixelSize: 18 * ScreenValues.dp
+                Label {
+                    text: "physicalDotsPerInch: " + physicalDotsPerInch
+                    width: parent.width
+                    elide: "ElideRight"
+                    font.pixelSize: 18 * ScreenValues.dp
+                }
+
+                Label {
+                    text: "physicalDotsPerInchX: " + physicalDotsPerInchX
+                    width: parent.width
+                    elide: "ElideRight"
+                    font.pixelSize: 18 * ScreenValues.dp
+                }
+
+                Label {
+                    text: "physicalDotsPerInchY: " + physicalDotsPerInchY
+                    width: parent.width
+                    elide: "ElideRight"
+                    font.pixelSize: 18 * ScreenValues.dp
+                }
+
+                Label {
+                    text: "dp: " + ScreenValues.dp
+                    width: parent.width
+                    elide: "ElideRight"
+                    font.pixelSize: 18 * ScreenValues.dp
+                }
+
+                Label {
+                    text: "dpi: " + ScreenValues.dpi
+                    width: parent.width
+                    elide: "ElideRight"
+                    font.pixelSize: 18 * ScreenValues.dp
+                }
+            }
         }
     }
 }
-
